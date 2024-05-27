@@ -1,0 +1,24 @@
+Kafka Run 
+
+Step 1:
+Cd Kafka
+
+1.     .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+
+2. .\bin\windows\kafka-server-start.bat .\config\server.properties
+
+
+3. kafka-console-consumer.bat --topic test --bootstrap-server localhost:9092 --from-beginning
+
+4. kafka-console-producer.bat --broker-list localhost:9092 --topic test
+
+Show All Topics:
+kafka-topics.bat --list --bootstrap-server localhost:9092
+
+Create Topic:
+E:\kafka\bin\windows>   kafka-topics.bat --bootstrap-server localhost:9092 --topic <first_topic> --create --partitions 3 --replication-factor 1
+
+Topic Details:
+kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic <Topic name>
+
